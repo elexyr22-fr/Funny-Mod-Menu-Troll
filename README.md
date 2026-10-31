@@ -61,7 +61,7 @@ Vanish (invisibility) and the mod detection use a small handshake between player
 ## Credits and licenses
 
 - Funny Mod Menu Troll by [Elexyr22](https://elexyr22.fr/) - see `LICENSE`.
-- Seamless Input Switch by Lukituki6 - MIT, see `sis/LICENSE`.
+- Seamless Input Switch by [Lukituki6](https://github.com/Lukituki6/Seamless-Input-Switch-PD2-Mod) - MIT, see `sis/LICENSE`.
 
 ---
 
