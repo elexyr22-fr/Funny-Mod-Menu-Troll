@@ -3,7 +3,7 @@
 	"description": "All-in-one sandbox mod menu (F9): enemy spawner, God Mode, One Shot total, instant interactions, requirement bypass, unbreakable drills, auto drill place / repair, auto pickup collectibles, auto steal, instant placement, Vanish (AI: host, invisibility: players with the mod), Fly / No Clip, teleport / follow, loot, custody, host administration. FR/EN. Dev by Elexyr22 - https://elexyr22.fr/",
 	"author": "Elexyr22",
 	"contact": "https://elexyr22.fr/",
-	"version": "1.6",
+	"version": "1.7",
 	"color": "0.043 0.808 0.6",
 	"hooks": [
 		{

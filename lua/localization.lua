@@ -8,7 +8,7 @@ FunnyModMenu = FunnyModMenu or {}
 local FMM = FunnyModMenu
 
 FMM.NAME = "Funny Mod Menu Troll"
-FMM.VERSION = "1.6"
+FMM.VERSION = "1.7"
 FMM.AUTHOR = "Elexyr22"
 FMM.WEBSITE = "https://elexyr22.fr/"
 FMM.LEGACY_MODS = {

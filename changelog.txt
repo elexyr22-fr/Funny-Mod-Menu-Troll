@@ -1,6 +1,11 @@
 Funny Mod Menu Troll - changelog
 Dev by Elexyr22 - https://elexyr22.fr/
 
+1.7
+- New SECRET tab: Secret puzzle door, piano, achievements export / auto reroll and auto complete (merged from Auto Secret Door, Auto Secret Piano, Secret Logger). Each action explains where to go when you are in the wrong level
+- Seamless Input Switch (Lukituki6, MIT) is now bundled in sis/
+- Popup in the top right at level start: how to open the menu (key read from the keybind)
+
 1.6 (V18)
 - Fix V17: WORLD > ENEMIES has two separate switches again, "Vanilla enemies" (no new vanilla
   spawns) and "Waves" (no new assault waves, present enemies stay), plus "Block all enemies"

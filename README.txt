@@ -1,10 +1,15 @@
-Funny Mod Menu Troll - version 1.6
+Funny Mod Menu Troll - version 1.7
 Dev by Elexyr22
 https://elexyr22.fr/
 
 ======================================================================
 ENGLISH
 ======================================================================
+
+Version 1.7
+- New SECRET tab: puzzle door, piano, achievements export / auto reroll and auto complete, with a clear message when you are in the wrong level.
+- Seamless Input Switch is now bundled.
+- Top-right popup at level start with the key that opens the menu.
 
 Version 1.6 (V18)
 - WORLD > ENEMIES: "Vanilla enemies" and "Waves" are two separate switches again (host only,
