@@ -1804,9 +1804,7 @@ local function secret_guard(kind, fn)
 	if here then
 		return fn()
 	end
-	secret_msg(T("fmmt_secret_wrong_title"), T("fmmt_secret_zone_" .. kind) .. "
-
-" .. T("fmmt_secret_current_level", { VALUE = tostring(level or "-") }))
+	secret_msg(T("fmmt_secret_wrong_title"), T("fmmt_secret_zone_" .. kind) .. "\n\n" .. T("fmmt_secret_current_level", { VALUE = tostring(level or "-") }))
 end
 
 local function zone_info(c, kind)
