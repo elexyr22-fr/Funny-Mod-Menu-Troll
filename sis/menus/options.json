@@ -1,0 +1,127 @@
+{
+    "menu_id": "sis_options",
+    "parent_menu_id": "blt_options",
+    "title": "sis_options_title",
+    "description": "sis_options_desc",
+    "back_callback": "sis_flush_settings",
+    "items": [
+        {
+            "type": "multiple_choice",
+            "id": "sis_mode",
+            "title": "sis_mode_title",
+            "description": "sis_mode_desc",
+            "callback": "sis_mode",
+            "items": [
+                "sis_mode_auto",
+                "sis_mode_pc",
+                "sis_mode_gamepad"
+            ],
+            "value": "mode"
+        },
+        {
+            "type": "slider",
+            "id": "sis_axis_threshold",
+            "title": "sis_axis_threshold_title",
+            "description": "sis_axis_threshold_desc",
+            "callback": "sis_axis_threshold",
+            "value": "axis_threshold",
+            "max": 0.5,
+            "min": 0.05,
+            "step": 0.01,
+            "show_value": true
+        },
+        {
+            "type": "slider",
+            "id": "sis_axis_change_threshold",
+            "title": "sis_axis_change_threshold_title",
+            "description": "sis_axis_change_threshold_desc",
+            "callback": "sis_axis_change_threshold",
+            "value": "axis_change_threshold",
+            "max": 0.5,
+            "min": 0.02,
+            "step": 0.01,
+            "show_value": true
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_prompt_style",
+            "title": "sis_prompt_style_title",
+            "description": "sis_prompt_style_desc",
+            "callback": "sis_prompt_style",
+            "items": [
+                "sis_prompt_style_pc",
+                "sis_prompt_style_xbox",
+                "sis_prompt_style_playstation"
+            ],
+            "value": "prompt_style"
+        },
+        {
+            "type": "slider",
+            "id": "sis_gamepad_look_sensitivity",
+            "title": "sis_gamepad_look_sensitivity_title",
+            "description": "sis_gamepad_look_sensitivity_desc",
+            "callback": "sis_gamepad_look_sensitivity",
+            "value": "gamepad_look_sensitivity",
+            "max": 4.0,
+            "min": 0.5,
+            "step": 0.1,
+            "show_value": true
+        },
+        {
+            "type": "slider",
+            "id": "sis_gamepad_ads_sensitivity",
+            "title": "sis_gamepad_ads_sensitivity_title",
+            "description": "sis_gamepad_ads_sensitivity_desc",
+            "callback": "sis_gamepad_ads_sensitivity",
+            "value": "gamepad_ads_sensitivity",
+            "max": 2.0,
+            "min": 0.5,
+            "step": 0.05,
+            "show_value": true
+        },
+        {
+            "type": "slider",
+            "id": "sis_gamepad_look_deadzone",
+            "title": "sis_gamepad_look_deadzone_title",
+            "description": "sis_gamepad_look_deadzone_desc",
+            "callback": "sis_gamepad_look_deadzone",
+            "value": "gamepad_look_deadzone",
+            "max": 0.3,
+            "min": 0.0,
+            "step": 0.01,
+            "show_value": true
+        },
+        {
+            "type": "toggle",
+            "id": "sis_gamepad_invert_y",
+            "title": "sis_gamepad_invert_y_title",
+            "description": "sis_gamepad_invert_y_desc",
+            "callback": "sis_gamepad_invert_y",
+            "value": "gamepad_invert_y"
+        },
+        {
+            "type": "toggle",
+            "id": "sis_controller_vibration",
+            "title": "sis_controller_vibration_title",
+            "description": "sis_controller_vibration_desc",
+            "callback": "sis_controller_vibration",
+            "value": "controller_vibration"
+        },
+        {
+            "type": "toggle",
+            "id": "sis_force_aim_assist",
+            "title": "sis_force_aim_assist_title",
+            "description": "sis_force_aim_assist_desc",
+            "callback": "sis_force_aim_assist",
+            "value": "force_aim_assist"
+        },
+        {
+            "type": "toggle",
+            "id": "sis_menu_mouse",
+            "title": "sis_menu_mouse_title",
+            "description": "sis_menu_mouse_desc",
+            "callback": "sis_menu_mouse",
+            "value": "menu_mouse"
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+Funny Mod Menu Troll - changelog
+Dev by Elexyr22 - https://elexyr22.fr/
+
+1.6 (V18)
+- Fix V17: WORLD > ENEMIES has two separate switches again, "Vanilla enemies" (no new vanilla
+  spawns) and "Waves" (no new assault waves, present enemies stay), plus "Block all enemies"
+  (old NO_ENEMIES_HARD) under ADVANCED. All reset to ON / ON / OFF every level (not persisted)
+- New INTERACTIONS > AUTO > "Automatic mission actions" (lua/auto_mission.lua, default ON):
+  active vanilla mission interactions in range through RealInteract, strict classes MISSION_C4 /
+  DRILL / HACK / DOOR / DEVICE / INSERT / TERMINAL. Never bags, pickups, weapons, people,
+  keep_active interactions or escape / extraction. Mission C4 uses Instant placement (0.05 s)
+- Auto Steal client audit: the 30/09 log shows no client request was ever sent, every attempt
+  stopped locally on can_select=false. RealInteract now tells why (player state / deployable /
+  skill); an unmasked player waits (one log line) instead of burning retries
+- Auto Steal per type (collectible, keycard, crowbar, mission, valuable, generic): HOST / CLIENT
+  result of the session in the menu, logs "client request sent / host confirmed / host refused /
+  unsupported on client". A type refused 3 times by the host without any confirmation is no
+  longer tried as client for the session. Tag CLIENT LIMITED until confirmed in game
+- FMMT_VAN hello / ack now carry the mod version and a feature bitmask (old bare hello / ack
+  still accepted): FunnyMod.CompatPeers, SETTINGS > NETWORK "Players with Funny Mod Menu Troll
+  X / Y" + list, TEAM > player > INFO "INSTALLED vX / NOT DETECTED". Join chat message unchanged
+
+1.6 (V17)
+- Menu redesign (UI / navigation only): COMBAT, INTERACTIONS, SPAWNER, WORLD, ME, TEAM, TROLL,
+  SETTINGS. PLAYER / PLAYERS removed: ME = local character only, TEAM = other humans + bots with
+  a per-teammate page (teleport, follow, revive now, custody, kick / ban for humans, info)
+- Category pages list sections, section pages start with "< Back"; short rows, explanations in
+  the item description (MenuUI help), short network tags, ON / OFF / host-only / error colors
+- TROLL shortcuts reuse the home rows (same API calls, same settings keys)
+- Settings split: Interface / Network / Gamepad / Performance / About. New settings
+  show_descriptions, show_net_tags, join_chat_message (default ON). No key renamed
+- Spawner: favorites + "QES alive | Queue" counter on the main page, SAFE / FAST / EXTREME
+- New lua/join_chat.lua: "Funny Game lol" once per online session through
+  ChatManager:send_message (real chat, all players). Flag in Global (survives day changes),
+  reset when no session exists. Client: host peer ip_verified; host: first remote peer synched.
+  Never in solo / offline
+
+1.5 (V16)
+- Vanish split in two, Player > VANISH: "Vanish AI" (V15, host only, unchanged), "Player
+  invisibility" (new) and "Full Vanish" (both)
+- Player invisibility (lua/player_invisibility.lua): verified 248.2, there is no visibility RPC
+  (each client renders its own HuskPlayer, set_force_invisible is never synced): custom BLT hidden
+  chat message FMMT_VAN (hello / ack / hide / show), host AND client, applied only by the players
+  that have the mod. Vanilla players ignore it and still see you (menu tag + compatible count)
+- Hidden husk: unit + every linked unit (weapons and parts, mask, shield, melee prop, bag...)
+  every frame, LOD / inventory visibility forced off, name label hidden, dropped magazines,
+  muzzle flash, tracers and shell ejection suppressed. No delete / set_slot: still networked,
+  shootable, synced; weapon switch, reload, custody / respawn handled (peer:unit() each frame)
+- Vanish AI and Player invisibility reset OFF on level unload / lobby / mission end
+
+1.4 (V15)
+- Fix: RealInteract nil in V14 (SuperBLT dofile returns nothing): auto drill / auto pickup never
+  ran. real_interact.lua + auto_actions.lua loaded by mod.txt, APIs read at call time
+- New common engine lua/auto_actions.lua (FunnyMod.AutoActions): detect / validate / start /
+  vanilla timer / complete / confirmation, _pending[unit_key] {type, started_at, retries,
+  cooldown}, ~3 Hz per system, one unit per tick, [AutoActions] phase logs + FAILED reasons
+- RealInteract API: can_interact / start / complete / cancel / trigger (PlayerStandard order,
+  sync_teammate_progress), no active_unit change, no crosshair needed
+- Auto pickup: independent of the highlight option, marker kept until the game confirms
+- Auto Steal (new, OFF): collectibles > mission items > valuables > other pickups, never bags
+- Instant object placement (new, ON): deployables + mission devices 0.05 s
+- Auto drill: mission C4 / door devices, detailed [AutoDrill] logs; Auto revive: waits for the
+  real confirmation (V14 "refused by can_interact" was a false negative)
+- Vanish (new, host only): AIAttentionObject:get_attention nil for the local player only
+- Settings: Auto Actions radius, Debug Auto Actions; highlight_collectibles migrated back ON once
+
+1.3 (V14)
+- Auto drill complete: Auto place (real vanilla placement interaction of drills / saws /
+  thermal drills / hacks, MissionDoorDeviceInteractionExt, host AND client) + Auto restart
+  (host: Drill:on_autorepair, client or computers: vanilla repair interaction), repair before
+  placement, 3 s cooldown per unit, radius from the interaction position, power cuts respected
+- Auto pickup collectibles (default ON, 5 m): Gage packages, turtles, horseshoes through the
+  real pickup interaction (client: vanilla sync_pickup request validated by the host), closest
+  first, one per tick, pending 2 s until the game's callback, never keycards / bags / loot
+- Network matrix: auto_drill_place, auto_drill_restart, auto_pickup_collectibles (local)
+- New lua/real_interact.lua (shared "complete an existing interaction like the player" helper)
+
+1.2 hotfix (V13)
+- Menu spawn button only queues (enqueue_spawn), 125 ms debounce, SAFE 1 spawn / 3 frames and
+  forced while the menu is open, no view rebuild per spawn (light "Active QES" label update),
+  catalog built once per level
+- debug_perf setting: [QES][perf] spawn / menu refresh timings, SLOW SPAWN / SLOW REFRESH > 50 ms
+- Highlight: collectible marker removed instantly on pickup / script removal (tracked
+  contour_id + waypoint_id), rescan kept as fallback
+- Auto drill (host, default ON, 5 m): vanilla Drill:on_autorepair on jammed devices in range
+
+1.2 (V12)
+- Fix: Gage packages / collectibles highlight (GageAssignmentManager list + pickup slots,
+  contour + local HUD marker), mission objects, optional loot
+- Aimbot + Auto Kill (both OFF by default), targets / FOV / distance / delay options
+- Convert aimed enemy / convert all enemies (host, native GroupAI path, no Joker limit)
+- Instant custody trade: also during assaults, converted enemies count (option), trade now,
+  force respawn; per-player custody status in the Players menu
+- Auto revive teammates with a radius option (vanilla revive interaction, client OK)
+- Configurable follow delay (1-30 s), safe landing next to the target
+- Network matrix: highlight_collectibles, aimbot, auto_kill, convert_target, convert_all,
+  instant_trade, force_respawn, auto_revive, follow_player
+
+1.1 (V11 update - host / client compatibility)
+- Central network API (lua/network.lua, FunnyMod.Network): every module and the menu use it,
+  live detection of solo / host / client / menu
+- Every feature checked in the 248.2 source and classified (README matrix FR/EN)
+- As a client: local features stay available, host-only ones are greyed "HOST ONLY",
+  One Shot tagged "CLIENT LIMITED", Fly / No Clip tagged "CLIENT EXPERIMENTAL"
+- Settings > Network: current mode, local / host availability, "Hide HOST ONLY options"
+- Fix: requirement bypass on C4 / shaped charges as a client (the host's answer arrived
+  outside the interaction context)
+- Fix: Seamless Input Switch button in solo (the delayed call was frozen by the pause)
+- Infinite sentry ammo explicitly host only
+
+1.1 (V10 update)
+- Single key: F9 (menu). The God Mode / Never Detected keybinds are removed (menu only)
+- Credits: one clickable "Dev by Elexyr22" line (opens https://elexyr22.fr/ through the
+  SuperBLT / BeardLib overlay call)
+- One Shot total (bullet, melee, explosion, fire, projectile, grenade, saw) on enemies,
+  Jokers / allies and bots (host), human players with the Friendly Fire mutator
+- God Mode all players (host): host + bots
+- Ignore interaction requirements, unbreakable drills
+- Fly Mode, No Clip, Fly + No Clip
+- Teleport everyone to me (bots), auto follow a player (3 s), stop on leave / death / level end
+- Seamless Input Switch shortcut and status in Settings
+- Menu reorganised (Combat / Interactions / Player / Players / Settings)
+- Old standalone mods moved to mods/_legacy_funny_backup/
+
+1.1 (first release)
+- First all-in-one release (Quick Enemy Spawner menu, God Mode, Infinite Player Resources,
+  Never Detected, No Stealth Noise Alerts, No Player Gun Alerts merged in one folder)
+- Kill (real synced death) and Remove (cleanup) are now separate for QES / vanilla / all enemies;
+  Kill never targets allies or Jokers
+- Infinite sentry ammo for your own sentries
+- Loot spawner uses the thrown-bag pipeline ("Throw in front of me" by default)
+- Custody: instant trades, free now with a hostage, force respawn (host only)
+- Highlight collectibles / mission objectives
+- French / English localization with automatic language and a selector in Settings
+- Credits and website button in the menu
+- Warning in the log when an old standalone version is still enabled

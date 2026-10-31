@@ -1,0 +1,49 @@
+{
+    "menu_id": "sis_aim_assist",
+    "parent_menu_id": "sis_options",
+    "title": "sis_aim_assist_menu_title",
+    "description": "sis_aim_assist_menu_desc",
+    "back_callback": "sis_flush_settings",
+    "items": [
+        {
+            "type": "toggle",
+            "id": "sis_aim_assist_sticky_enabled",
+            "title": "sis_aim_assist_sticky_enabled_title",
+            "description": "sis_aim_assist_sticky_enabled_desc",
+            "callback": "sis_aim_assist_sticky_enabled",
+            "value": "aim_assist_sticky_enabled"
+        },
+        {
+            "type": "slider",
+            "id": "sis_aim_assist_sticky_strength",
+            "title": "sis_aim_assist_sticky_strength_title",
+            "description": "sis_aim_assist_sticky_strength_desc",
+            "callback": "sis_aim_assist_sticky_strength",
+            "value": "aim_assist_sticky_strength",
+            "max": 2.0,
+            "min": 0.25,
+            "step": 0.05,
+            "show_value": true
+        },
+        {
+            "type": "toggle",
+            "id": "sis_aim_assist_snap_enabled",
+            "title": "sis_aim_assist_snap_enabled_title",
+            "description": "sis_aim_assist_snap_enabled_desc",
+            "callback": "sis_aim_assist_snap_enabled",
+            "value": "aim_assist_snap_enabled"
+        },
+        {
+            "type": "slider",
+            "id": "sis_aim_assist_snap_strength",
+            "title": "sis_aim_assist_snap_strength_title",
+            "description": "sis_aim_assist_snap_strength_desc",
+            "callback": "sis_aim_assist_snap_strength",
+            "value": "aim_assist_snap_strength",
+            "max": 2.0,
+            "min": 0.25,
+            "step": 0.05,
+            "show_value": true
+        }
+    ]
+}

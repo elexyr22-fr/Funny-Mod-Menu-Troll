@@ -1,0 +1,69 @@
+{
+    "menu_id": "sis_controller_tuning",
+    "parent_menu_id": "sis_options",
+    "title": "sis_controller_tuning_title",
+    "description": "sis_controller_tuning_desc",
+    "back_callback": "sis_flush_settings",
+    "items": [
+        {
+            "type": "slider",
+            "id": "sis_gamepad_move_deadzone",
+            "title": "sis_gamepad_move_deadzone_title",
+            "description": "sis_gamepad_move_deadzone_desc",
+            "callback": "sis_gamepad_move_deadzone",
+            "value": "gamepad_move_deadzone",
+            "max": 0.3,
+            "min": 0.1,
+            "step": 0.01,
+            "show_value": true
+        },
+        {
+            "type": "slider",
+            "id": "sis_gamepad_move_outer_deadzone",
+            "title": "sis_gamepad_move_outer_deadzone_title",
+            "description": "sis_gamepad_move_outer_deadzone_desc",
+            "callback": "sis_gamepad_move_outer_deadzone",
+            "value": "gamepad_move_outer_deadzone",
+            "max": 0.3,
+            "min": 0.0,
+            "step": 0.01,
+            "show_value": true
+        },
+        {
+            "type": "slider",
+            "id": "sis_gamepad_move_response_curve",
+            "title": "sis_gamepad_move_response_curve_title",
+            "description": "sis_gamepad_move_response_curve_desc",
+            "callback": "sis_gamepad_move_response_curve",
+            "value": "gamepad_move_response_curve",
+            "max": 2.0,
+            "min": 0.5,
+            "step": 0.05,
+            "show_value": true
+        },
+        {
+            "type": "slider",
+            "id": "sis_gamepad_look_outer_deadzone",
+            "title": "sis_gamepad_look_outer_deadzone_title",
+            "description": "sis_gamepad_look_outer_deadzone_desc",
+            "callback": "sis_gamepad_look_outer_deadzone",
+            "value": "gamepad_look_outer_deadzone",
+            "max": 0.3,
+            "min": 0.0,
+            "step": 0.01,
+            "show_value": true
+        },
+        {
+            "type": "slider",
+            "id": "sis_gamepad_look_response_curve",
+            "title": "sis_gamepad_look_response_curve_title",
+            "description": "sis_gamepad_look_response_curve_desc",
+            "callback": "sis_gamepad_look_response_curve",
+            "value": "gamepad_look_response_curve",
+            "max": 2.0,
+            "min": 0.5,
+            "step": 0.05,
+            "show_value": true
+        }
+    ]
+}

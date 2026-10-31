@@ -1,0 +1,141 @@
+{
+    "menu_id": "sis_gamepad_bindings",
+    "parent_menu_id": "sis_options",
+    "title": "sis_gamepad_bindings_title",
+    "description": "sis_gamepad_bindings_desc",
+    "back_callback": "sis_flush_settings",
+    "items": [
+        {
+            "type": "toggle",
+            "id": "sis_custom_gamepad_bindings",
+            "title": "sis_custom_gamepad_bindings_title",
+            "description": "sis_custom_gamepad_bindings_desc",
+            "callback": "sis_custom_gamepad_bindings",
+            "value": "custom_gamepad_bindings"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_primary_attack",
+            "title": "sis_bind_primary_attack_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_primary_attack",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_primary_attack"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_secondary_attack",
+            "title": "sis_bind_secondary_attack_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_secondary_attack",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_secondary_attack"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_interact",
+            "title": "sis_bind_interact_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_interact",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_interact"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_use_item",
+            "title": "sis_bind_use_item_title",
+            "description": "sis_bind_use_item_desc",
+            "callback": "sis_bind_use_item",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_use_item"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_reload",
+            "title": "sis_bind_reload_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_reload",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_reload"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_jump",
+            "title": "sis_bind_jump_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_jump",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_jump"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_duck",
+            "title": "sis_bind_duck_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_duck",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_duck"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_switch_weapon",
+            "title": "sis_bind_switch_weapon_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_switch_weapon",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_switch_weapon"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_run",
+            "title": "sis_bind_run_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_run",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_run"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_melee",
+            "title": "sis_bind_melee_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_melee",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_melee"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_throw_grenade",
+            "title": "sis_bind_throw_grenade_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_throw_grenade",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_throw_grenade"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_weapon_gadget",
+            "title": "sis_bind_weapon_gadget_title",
+            "description": "sis_bind_weapon_gadget_desc",
+            "callback": "sis_bind_weapon_gadget",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_weapon_gadget"
+        },
+        {
+            "type": "multiple_choice",
+            "id": "sis_bind_weapon_firemode",
+            "title": "sis_bind_weapon_firemode_title",
+            "description": "sis_binding_common_desc",
+            "callback": "sis_bind_weapon_firemode",
+            "items": ["sis_button_a", "sis_button_b", "sis_button_x", "sis_button_y", "sis_button_left_shoulder", "sis_button_right_shoulder", "sis_button_left_trigger", "sis_button_right_trigger", "sis_button_left_thumb", "sis_button_right_thumb", "sis_button_d_up", "sis_button_d_down", "sis_button_d_left", "sis_button_d_right"],
+            "value": "bind_weapon_firemode"
+        },
+        {
+            "type": "button",
+            "id": "sis_restore_vanilla_bindings",
+            "title": "sis_restore_vanilla_bindings_title",
+            "description": "sis_restore_vanilla_bindings_desc",
+            "callback": "sis_restore_vanilla_bindings"
+        }
+    ]
+}

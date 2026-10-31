@@ -1,0 +1,433 @@
+{
+	"name": "Funny Mod Menu Troll",
+	"description": "All-in-one sandbox mod menu (F9): enemy spawner, God Mode, One Shot total, instant interactions, requirement bypass, unbreakable drills, auto drill place / repair, auto pickup collectibles, auto steal, instant placement, Vanish (AI: host, invisibility: players with the mod), Fly / No Clip, teleport / follow, loot, custody, host administration. FR/EN. Dev by Elexyr22 - https://elexyr22.fr/",
+	"author": "Elexyr22",
+	"contact": "https://elexyr22.fr/",
+	"version": "1.6",
+	"color": "0.043 0.808 0.6",
+	"hooks": [
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/network.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/real_interact.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/auto_actions.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/localization.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/join_chat.lua"
+		},
+		{
+			"hook_id": "lib/managers/group_ai_states/groupaistatebase",
+			"script_path": "lua/core.lua"
+		},
+		{
+			"hook_id": "lib/managers/mission/elementmissionend",
+			"script_path": "lua/core.lua"
+		},
+		{
+			"hook_id": "lib/managers/gameplaycentralmanager",
+			"script_path": "lua/core.lua"
+		},
+		{
+			"hook_id": "lib/setups/gamesetup",
+			"script_path": "lua/core.lua"
+		},
+		{
+			"hook_id": "lib/utils/game_state_machine/gamestatemachine",
+			"script_path": "lua/core.lua"
+		},
+		{
+			"hook_id": "lib/managers/group_ai_states/groupaistatebesiege",
+			"script_path": "lua/enemy_control.lua"
+		},
+		{
+			"hook_id": "lib/managers/mission/elementspawnenemydummy",
+			"script_path": "lua/enemy_control.lua"
+		},
+		{
+			"hook_id": "lib/managers/mission/elementspawnenemygroup",
+			"script_path": "lua/enemy_control.lua"
+		},
+		{
+			"hook_id": "lib/units/enemies/cop/copdamage",
+			"script_path": "lua/oneshot.lua"
+		},
+		{
+			"hook_id": "lib/units/interactions/interactionext",
+			"script_path": "lua/interactions.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/interactions.lua"
+		},
+		{
+			"hook_id": "lib/units/props/timergui",
+			"script_path": "lua/interactions.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/states/playerstandard",
+			"script_path": "lua/player_speed.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/states/playercarry",
+			"script_path": "lua/player_speed.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/states/playerstandard",
+			"script_path": "lua/fly_mode.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/teleport.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/loot_spawner.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/unit_catalog.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/player_resources.lua"
+		},
+		{
+			"hook_id": "lib/units/enemies/cop/logics/coplogicinactive",
+			"script_path": "lua/no_pagers.lua"
+		},
+		{
+			"hook_id": "lib/units/enemies/cop/logics/coplogicintimidated",
+			"script_path": "lua/no_pagers.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/admin.lua"
+		},
+		{
+			"hook_id": "lib/network/base/session_states/hoststatebase",
+			"script_path": "lua/admin.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/playerdamage",
+			"script_path": "lua/godmode.lua"
+		},
+		{
+			"hook_id": "lib/units/player_team/teamaidamage",
+			"script_path": "lua/godmode.lua"
+		},
+		{
+			"hook_id": "lib/units/player_team/teamaimovement",
+			"script_path": "lua/godmode.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/huskplayerdamage",
+			"script_path": "lua/godmode.lua"
+		},
+		{
+			"hook_id": "lib/units/player_team/teamaidamage",
+			"script_path": "lua/oneshot.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/huskplayerdamage",
+			"script_path": "lua/oneshot.lua"
+		},
+		{
+			"hook_id": "lib/units/weapons/raycastweaponbase",
+			"script_path": "lua/infinite_ammo.lua"
+		},
+		{
+			"hook_id": "lib/units/weapons/sawweaponbase",
+			"script_path": "lua/infinite_ammo.lua"
+		},
+		{
+			"hook_id": "lib/units/weapons/raycastweaponbase",
+			"script_path": "lua/no_reload.lua"
+		},
+		{
+			"hook_id": "lib/units/weapons/sawweaponbase",
+			"script_path": "lua/no_reload.lua"
+		},
+		{
+			"hook_id": "lib/units/enemies/cop/logics/coplogicbase",
+			"script_path": "lua/never_detected.lua"
+		},
+		{
+			"hook_id": "lib/units/props/securitycamera",
+			"script_path": "lua/camera_blind.lua"
+		},
+		{
+			"hook_id": "lib/managers/group_ai_states/groupaistatebase",
+			"script_path": "lua/no_noise_alerts.lua"
+		},
+		{
+			"hook_id": "lib/units/weapons/raycastweaponbase",
+			"script_path": "lua/no_gun_alerts.lua"
+		},
+		{
+			"hook_id": "lib/units/weapons/sentrygunweapon",
+			"script_path": "lua/sentry.lua"
+		},
+		{
+			"hook_id": "lib/managers/trademanager",
+			"script_path": "lua/trade.lua"
+		},
+		{
+			"hook_id": "lib/setups/gamesetup",
+			"script_path": "lua/highlight.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/convert.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/auto_revive.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/aimbot.lua"
+		},
+		{
+			"hook_id": "lib/managers/gageassignmentmanager",
+			"script_path": "lua/highlight.lua"
+		},
+		{
+			"hook_id": "lib/units/pickups/pickup",
+			"script_path": "lua/highlight.lua"
+		},
+		{
+			"hook_id": "lib/units/interactions/interactionext",
+			"script_path": "lua/highlight.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/auto_drill.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/auto_steal.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/auto_mission.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/auto_toolbag.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/instant_place.lua"
+		},
+		{
+			"hook_id": "lib/units/interactions/interactionext",
+			"script_path": "lua/instant_place.lua"
+		},
+		{
+			"hook_id": "lib/units/props/aiattentionobject",
+			"script_path": "lua/vanish.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/vanish.lua"
+		},
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "lua/player_invisibility.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/huskplayerbase",
+			"script_path": "lua/player_invisibility.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/huskplayerinventory",
+			"script_path": "lua/player_invisibility.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/huskplayermovement",
+			"script_path": "lua/player_invisibility.lua"
+		},
+		{
+			"hook_id": "lib/managers/hudmanager",
+			"script_path": "lua/player_invisibility.lua"
+		},
+		{
+			"hook_id": "lib/units/weapons/newnpcraycastweaponbase",
+			"script_path": "lua/player_invisibility.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "secret/door_main.lua"
+		},
+		{
+			"hook_id": "lib/managers/mission/elementmissionend",
+			"script_path": "secret/door_mission_end_log.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "secret/piano_main.lua"
+		},
+		{
+			"hook_id": "lib/units/props/unopianobase",
+			"script_path": "secret/piano_main.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "secret/logger_main.lua"
+		},
+		{
+			"hook_id": "lib/managers/customsafehousemanager",
+			"script_path": "secret/logger_main.lua"
+		},
+		{
+			"hook_id": "lib/managers/custom_safehouse/unoachievementchallenge",
+			"script_path": "secret/logger_main.lua"
+		},
+		{
+			"hook_id": "lib/managers/achievmentmanager",
+			"script_path": "secret/logger_main.lua"
+		},
+		{
+			"hook_id": "lib/setups/gamesetup",
+			"script_path": "secret/logger_main.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "secret/logger_auto.lua"
+		},
+		{
+			"hook_id": "lib/units/equipment/sentry_gun/sentrygundamage",
+			"script_path": "secret/logger_auto.lua"
+		},
+		{
+			"hook_id": "lib/units/contourext",
+			"script_path": "secret/logger_auto.lua"
+		},
+		{
+			"hook_id": "lib/managers/lootmanager",
+			"script_path": "secret/logger_auto.lua"
+		},
+		{
+			"hook_id": "core/lib/managers/controller/corecontrollermanager",
+			"script_path": "sis/lua/hooks/corecontrollermanager.lua"
+		},
+		{
+			"hook_id": "lib/managers/rumblemanager",
+			"script_path": "sis/lua/hooks/rumblemanager.lua"
+		},
+		{
+			"hook_id": "lib/managers/menu/menuinput",
+			"script_path": "sis/lua/hooks/menuinput.lua"
+		},
+		{
+			"hook_id": "lib/managers/menu/menuscenegui",
+			"script_path": "sis/lua/hooks/menuscenegui.lua"
+		},
+		{
+			"hook_id": "lib/managers/menu/menuscenemanager",
+			"script_path": "sis/lua/hooks/menuscenemanager.lua"
+		},
+		{
+			"hook_id": "lib/managers/menu/missionbriefinggui",
+			"script_path": "sis/lua/hooks/missionbriefinggui.lua"
+		},
+		{
+			"hook_id": "lib/managers/menu/playerinventorygui",
+			"script_path": "sis/lua/hooks/playerinventorygui.lua"
+		},
+		{
+			"hook_id": "lib/managers/menu/renderers/menunodemultiprofileswitchgui",
+			"script_path": "sis/lua/hooks/menunodemultiprofileswitchgui.lua"
+		},
+		{
+			"hook_id": "lib/managers/crimenetmanager",
+			"script_path": "sis/lua/hooks/crimenetmanager.lua"
+		},
+		{
+			"hook_id": "lib/managers/localizationmanager",
+			"script_path": "sis/lua/hooks/localizationmanager.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "sis/lua/hooks/menumanager.lua"
+		},
+		{
+			"hook_id": "lib/units/cameras/fpcameraplayerbase",
+			"script_path": "sis/lua/hooks/fpcameraplayerbase.lua"
+		},
+		{
+			"hook_id": "lib/units/beings/player/states/playerstandard",
+			"script_path": "sis/lua/hooks/playerstandard.lua"
+		},
+		{
+			"hook_id": "lib/managers/usermanager",
+			"script_path": "sis/lua/hooks/usermanager.lua"
+		},
+		{
+			"hook_id": "lib/states/ingameaccesscamera",
+			"script_path": "sis/lua/hooks/ingameaccesscamera.lua"
+		},
+		{
+			"hook_id": "lib/setups/gamesetup",
+			"script_path": "lua/welcome_popup.lua"
+		}
+	],
+	"keybinds": [
+		{
+			"keybind_id": "fmmt_menu",
+			"name": "Funny Mod Menu Troll - Menu",
+			"description": "Open / close the menu",
+			"script_path": "mod.lua",
+			"run_in_menu": false,
+			"run_in_game": true,
+			"localized": false
+		},
+		{
+			"keybind_id": "fmmt_secret_door",
+			"name": "Solve Secret Door (start/stop)",
+			"description": "Solves the 4 riddles of the Secret puzzle door",
+			"script_path": "secret/door_keybind.lua",
+			"run_in_menu": false,
+			"run_in_game": true,
+			"localized": false
+		},
+		{
+			"keybind_id": "fmmt_secret_piano",
+			"name": "Play Secret Piano Sequence",
+			"description": "Plays the 9-note Secret piano sequence (Safe House only)",
+			"script_path": "secret/piano_keybind.lua",
+			"run_in_menu": false,
+			"run_in_game": true,
+			"localized": false
+		},
+		{
+			"keybind_id": "fmmt_secret_export",
+			"name": "Export Secret Achievements",
+			"description": "Export secret_achievements.txt / .json",
+			"script_path": "secret/logger_keybind.lua",
+			"run_in_menu": true,
+			"run_in_game": true,
+			"localized": false
+		},
+		{
+			"keybind_id": "fmmt_secret_auto",
+			"name": "AUTO COMPLETE / AUTO STEALTH - SECRET ACHIEVEMENT (start/stop)",
+			"description": "uno_5 / tag_10 / uno_2 / nmh_10",
+			"script_path": "secret/logger_keybind_auto.lua",
+			"run_in_menu": false,
+			"run_in_game": true,
+			"localized": false
+		}
+	]
+}
