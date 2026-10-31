@@ -44,8 +44,6 @@ The tab shows whether you are in the right level and, if not, explains where to 
 - PAYDAY 2 with [SuperBLT](https://superblt.znix.xyz/)
 - [BeardLib](https://github.com/simon-wh/PAYDAY-2-BeardLib) (the F9 menu is a BeardLib MenuUI)
 
-Remove the standalone *Auto Secret Door*, *Auto Secret Piano*, *Secret Logger* and *Seamless Input Switch* mods if you have them: they are included here and would load twice.
-
 ## Installation
 
 1. Install SuperBLT and BeardLib.
@@ -73,6 +71,6 @@ Mod menu bac à sable tout-en-un pour **PAYDAY 2**. Appuie sur **F9** en jeu pou
 
 **Prérequis**: [SuperBLT](https://superblt.znix.xyz/) et [BeardLib](https://github.com/simon-wh/PAYDAY-2-BeardLib).
 
-**Installation**: copie le dossier `Funny Mod Menu Troll` dans `PAYDAY 2/mods/`, lance le jeu et appuie sur F9. Retire les anciens mods *Auto Secret Door*, *Auto Secret Piano*, *Secret Logger* et *Seamless Input Switch* s'ils sont installés, ils sont déjà inclus.
+**Installation**: copie le dossier `Funny Mod Menu Troll` dans `PAYDAY 2/mods/`, lance le jeu et appuie sur F9.
 
 L'onglet SECRET indique si tu es au bon niveau: la porte dans *La Maison Blanche*, le piano dans la *Safe House*, l'auto complétion dans *Henry's Rock*, *Breakin' Feds*, *Diamond Store* et *No Mercy*.
