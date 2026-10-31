@@ -42,7 +42,7 @@ The tab shows whether you are in the right level and, if not, explains where to 
 ## Requirements
 
 - PAYDAY 2 with [SuperBLT](https://superblt.znix.xyz/)
-- BeardLib (the F9 menu is a BeardLib MenuUI)
+- [BeardLib](https://github.com/simon-wh/PAYDAY-2-BeardLib) (the F9 menu is a BeardLib MenuUI)
 
 Remove the standalone *Auto Secret Door*, *Auto Secret Piano*, *Secret Logger* and *Seamless Input Switch* mods if you have them: they are included here and would load twice.
 
@@ -71,7 +71,7 @@ Mod menu bac à sable tout-en-un pour **PAYDAY 2**. Appuie sur **F9** en jeu pou
 
 **Fonctions**: God Mode, One Shot, aimbot, spawner d'ennemis, interactions instantanées, auto drill / steal, vol et No Clip, téléportation, gestion des joueurs (kick / ban), Vanish, et un onglet **SECRET** (porte à énigmes, piano, achievements). Interface en français et en anglais.
 
-**Prérequis**: SuperBLT et BeardLib.
+**Prérequis**: [SuperBLT](https://superblt.znix.xyz/) et [BeardLib](https://github.com/simon-wh/PAYDAY-2-BeardLib).
 
 **Installation**: copie le dossier `Funny Mod Menu Troll` dans `PAYDAY 2/mods/`, lance le jeu et appuie sur F9. Retire les anciens mods *Auto Secret Door*, *Auto Secret Piano*, *Secret Logger* et *Seamless Input Switch* s'ils sont installés, ils sont déjà inclus.
 
